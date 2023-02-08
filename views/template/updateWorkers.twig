@@ -1,0 +1,40 @@
+{% extends "../base.twig" %}
+{% block main %}
+
+	<div class="upd">
+		<form class = "upda" action="/update/{{worker._id}}" method="POST" enctype="multipart/form-data">
+
+
+			<div>
+				<label for="name">nom de l'employé :</label>
+				<div>
+					<input type="text" id="name" name="name" value="{{worker.name}}">
+				</div>
+			</div>
+			<div>
+				<label   for="photo">photo :</label>
+				<div>
+					<img  class = "imgup"src='../image/{{worker.photo}}' alt="">
+				</div>
+			</div>
+			<div>
+				<input type="file" id="photo" name="image">
+				<div>
+					<label for="fonction">poste occcupé :</label>
+				</div>
+			</div>
+			<div>
+				<input type="text" id="fonction" name="fonction" value="{{worker.fonction}}">
+				{# <div>
+					<label for="blame">blâme :</label>
+					<div>
+						<input type="number" id="blame" name="blame" value="{{worker.blame}}">
+					</div>
+				</div> #}
+
+				<button type="submit">VALIDER</button>
+			</form>
+
+		</div>
+	</div>
+{% endblock %}

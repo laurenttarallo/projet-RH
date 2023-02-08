@@ -1,0 +1,22 @@
+{% extends "../base.twig" %}
+
+{% block main %}
+	<div id = "adwo">
+			<form  class = " wor" action="/addWorkers" method="POST" enctype="multipart/form-data">
+				<label for="name">nom de l'employé</label><br>
+				<input type="text" id="name" name="name"required autocomplete ="off"><br>
+				<label for="photo">photo</label><br>
+				<input type="file" id="photo" name="image"required autocomplete ="off"><br>
+				<label for="fonction">poste occcupé</label><br>
+				<input type="text" id="fonction" name="fonction"required autocomplete ="off"><br>
+				<label for="blame">blâme</label><br>
+				<input type="number" id="blame" name="blame"required autocomplete ="off"><br>
+				<button type="submit">VALIDER</button>
+			</form>
+		</div>
+
+{% endblock %}
+	
+
+
+	

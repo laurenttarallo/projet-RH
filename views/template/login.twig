@@ -1,0 +1,28 @@
+{% extends "../base.twig" %}
+
+{% block main %}
+	<div>{{message}}</div>
+
+	<h1>Connexion</h1>
+	<div id ="log">
+		<form class ="logn" action="/login" method="POST">
+			<label for="mail">adresse mail :</label><br>
+			<input type="email" id="adresse mail" name="mail" required autocomplete ="off"><br>
+			<label for="password ">mot de passe :</label><br>
+			<input type="text" id="password" name="password" required autocomplete ="off"><br>
+				<button type="submit" >VALIDER</button>
+		</form>
+
+	</div>
+{% endblock %}
+
+
+{# <form action="/loginPass" method="POST">
+				<label for="email">login</label>
+				<input type="text" id="email" name="email" autocomplete="off">
+			    <label for="password">password</label>
+			    <input type="password" id="password" name="password" autocomplete="off">
+				<a href="" class="nav-link active">Laurent Tarallo</a>
+																		
+				<button type="submit">VALIDER</button>
+				</form> #}

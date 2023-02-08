@@ -1,0 +1,26 @@
+{% extends "../base.twig" %}
+{% block main %}
+
+<h1>ENREGISTREZ VOTRE COMPAGNIE</h1>
+	<div class="comp">
+		<form id="onepage" action="/addCompagnie" method="POST">
+
+			<label for="name">nom de la société :</label><br>
+			<input type="text" id="name" name="name" required autocomplete ="off"><br>
+			<label for="siret">siret :</label><br>
+			<input type="number" id="siret" name="siret" required autocomplete ="off"><br>
+			<label for="mail">adresse mail :</label><br>
+			<input type="email" id="mail" name="mail" required autocomplete ="off"><br>
+			<label for="CEOName">nom du directeur :</label><br>
+			<input type="text" id="CEONAME" name="CEOName" required autocomplete ="off"><br>
+			<label for="password ">mot de passe :</label><br>
+			<input type="password" id="password" name="password" required autocomplete ="off"><br>
+			
+			<div class="butn">
+				<button type="submit">VALIDER</button>
+			</div>
+		</form>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "../base.twig" %}
+
+{% block main %}
+	<h1>Liste des employés</h1>
+
+	<h2>
+		<a class="addemp" style="--color: #6eff3e;" href="/addWorker">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			ajouter un employé</a>
+	</h2>
+
+
+	<div class="cd-popup" role="alert">
+		<div class="cd-popup-container">
+			<p>Etes-vous sûr de vouloir supprimer cet élément?</p>
+			<ul class="cd-buttons">
+				<li>
+					<a href="" id="btnDelete">Oui</a>
+				</li>
+				<li>
+					<a href="#0">Non</a>
+				</li>
+			</ul>
+			<a href="#0" class="cd-popup-close img-replace"></a>
+		</div>
+		<!-- cd-popup-container -->
+	</div>
+	<!-- cd-popup -->
+<div id="trash" ondrop="drop(event)" ondragover="allowdrop(event)"><img src="/image/poubelle.jpg" alt=""></div>
+	{% for worker in workers %}
+		<div class="work" id="{{worker.id}}" draggable="true" data-worker-id={{worker.id}} ondragstart="drag(event)">
+			<div class="card">
+				<img class="ima" src='../image/{{worker.photo}}' alt="">
+				<div>
+					<div class="cardtxt">
+						<p class="moveit">nom de l'employé :</p>
+						<p>{{worker.name}}</p>
+					</div>
+					<div class="cardtxt">
+						<p class="moveit">poste occupé :</p>
+						<p class="rightText">{{worker.fonction}}</p>
+					</div>
+					<div class="cardtxt">
+						<p class="moveit">nombre de blâme :</p>
+						<p>{{worker.blame}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="upbtn">
+
+				<a href="/update/{{worker._id}}" class="modi"></a>
+
+				<a href="/blame/{{worker._id}}" class="blam"></a>
+
+
+				<a class="cd-popup-trigger licen" data-workerid="{{worker.id}}"></a>
+			</div>
+		</div>
+
+
+
+	{% endfor %}
+
+{% endblock %}
+{% block script %}
+
+	<script src="/js/main.js"></script>
+{% endblock %}
+
+{# <form action="/workers" method="POST">
+						<label for="picture">photo de l'employé</label>
+						<input type="file" id="picture" name="picture">
+						<label for="name">nom de l'employés</label>
+						<input type="text" id="name" name="name">
+						<label for="fonction">poste occupé</label>
+						<input type="text" id="fonction" name="fonction">
+						<label for="blâme">nombre de blâme</label>
+						<input type="number" id="" name="blâme">
+						<span type="submit">VALIDER</span>
+					</form> #}
