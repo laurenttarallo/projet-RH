@@ -11,7 +11,7 @@
 body {
   background-image: url(../image/koh-lanta.gif);
   background-size: 1620px 750px;
-  background-repeat:  no-repeat;
+  background-repeat: repeat;
   margin: 0;
   padding: 0;
 }
